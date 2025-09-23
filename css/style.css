@@ -45,14 +45,12 @@ body {
   color: #fff;
   border-radius: 4px;
 }
-
 /* Hero */
 .hero {
   padding: 40px 0;
   text-align: center;
 }
 
-/* Cards estilo MDN */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,7 +92,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-
 .contact-form button:hover {
   background-color: #024eaa;
 }
@@ -112,7 +109,6 @@ body {
   border: 1px solid #e1e4e8;
   border-radius: 4px;
 }
-
 /* Footer */
 .site-footer {
   background-color: #f6f8fa;
@@ -121,4 +117,5 @@ body {
   font-size: 0.9rem;
   color: #555;
 }
+
 
