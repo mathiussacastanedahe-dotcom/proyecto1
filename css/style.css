@@ -1,10 +1,13 @@
-/* --- Variables y Reset --- */
+/* ======================================= */
+/* 1. Variables y Reset */
+/* ======================================= */
 :root {
     --primary-color: #0366d6;
     --secondary-color: #345b81;
     --text-color: #333;
     --bg-light: #f6f8fa;
     --border-color: #e1e4e8;
+    --font-family: Arial, sans-serif; /* Definir fuente en variable */
 }
 
 * {
@@ -14,7 +17,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
     color: var(--text-color);
 }
@@ -22,6 +25,7 @@ body {
 a {
     text-decoration: none;
     color: var(--primary-color);
+    transition: color 0.2s;
 }
 
 /* --- Utilidad: Contenedor --- */
@@ -31,10 +35,13 @@ a {
     margin: 0 auto;
 }
 
-/* --- Header y Navegación (Flexbox) --- */
+/* ======================================= */
+/* 2. Header y Navegación (Flexbox) */
+/* ======================================= */
 .site-header {
     background-color: var(--secondary-color);
     padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra sutil */
 }
 
 .site-header .container {
@@ -45,20 +52,19 @@ a {
 
 .logo {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Ligeramente más grande */
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Aumentar ligeramente el espacio */
 }
 
 .main-nav a {
     color: white;
-    padding: 8px 10px;
-    /* Hover */
-    transition: background-color 0.2s;
+    padding: 8px 12px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .main-nav a:hover,
@@ -67,63 +73,105 @@ a {
     border-radius: 4px;
 }
 
-/* --- Contenido Principal --- */
+/* ======================================= */
+/* 3. Contenido Principal y Títulos */
+/* ======================================= */
 main {
     padding: 40px 0;
 }
 
 .hero {
     text-align: center;
+    margin-bottom: 40px; /* Aumentar margen */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Título de sección unificado para todas las páginas */
+.section-title {
+    text-align: center; 
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+.cards-section h2 { /* Aplica el estilo a la sección de inicio */
+    font-size: 2rem;
+    text-align: center;
     margin-bottom: 30px;
 }
 
-/* --- Tarjetas (CSS Grid) --- */
-.cards {
+/* ======================================= */
+/* 4. Tarjetas (CSS Grid) */
+/* ======================================= */
+.cards-grid { /* Renombrado para evitar conflicto con la clase 'cards' */
     display: grid;
-    /* Responsividad simple con Grid */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width un poco más grande */
+    gap: 30px;
+    padding-bottom: 40px;
 }
 
 .card {
     border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 6px;
-    background-color: var(--bg-light);
-    /* Hover */
-    transition: transform 0.2s;
+    border-radius: 8px; /* Bordes ligeramente más redondeados */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card a {
+    display: block;
+    padding: 25px; /* Más padding interno */
+    color: var(--text-color);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
 }
 
-/* --- Formulario (Flexbox) --- */
+/* ======================================= */
+/* 5. Formulario (Flexbox) */
+/* ======================================= */
 .contact-form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 8px;
+    background-color: var(--bg-light); /* Fondo claro para destacar */
+}
+
+.contact-form label {
+    margin-top: 15px; /* Más espacio */
+    font-weight: bold;
 }
 
 .contact-form input,
-.contact-form textarea,
-.contact-form button {
+.contact-form textarea {
     padding: 10px;
     margin-top: 5px;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 .contact-form button {
-    margin-top: 15px;
+    margin-top: 20px;
+    padding: 12px;
     background-color: var(--primary-color);
     color: white;
     border: none;
     cursor: pointer;
-    /* Hover */
     transition: background-color 0.2s;
 }
 
@@ -131,43 +179,67 @@ main {
     background-color: #024eaa;
 }
 
-/* --- Galería (CSS Grid) --- */
+/* ======================================= */
+/* 6. Galería (CSS Grid) - Soporte para FIGURE */
+/* ======================================= */
 .gallery {
     display: grid;
-    /* Responsividad simple con Grid */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Min-width ajustado */
+    gap: 20px;
     padding-bottom: 40px;
 }
 
-.gallery img {
+.gallery-item { /* Estilo para la etiqueta FIGURE */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    /* Hover */
-    transition: opacity 0.2s;
+    object-fit: cover; /* Asegura que la imagen cubra bien el espacio */
+    border-radius: 4px 4px 0 0;
 }
 
-.gallery img:hover {
-    opacity: 0.8;
+.gallery-item figcaption { /* Estilo para la leyenda */
+    text-align: center;
+    padding: 10px 5px;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
 
-/* --- Footer --- */
+.gallery-item:hover {
+    transform: scale(1.05); /* Zoom sutil y general */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================================= */
+/* 7. Footer */
+/* ======================================= */
 .site-footer {
     background-color: var(--bg-light);
-    padding: 20px 0;
+    padding: 25px 0; /* Más padding */
     text-align: center;
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
 }
 
-/* --- Responsividad (Media Query) --- */
+/* ======================================= */
+/* 8. Responsividad (Media Query) */
+/* ======================================= */
 @media (max-width: 768px) {
-    /* Apila el logo y la navegación */
+    /* Mantiene la pila vertical del header, pero con mejor espaciado */
     .site-header .container {
         flex-direction: column;
-        text-align: center;
     }
 
     .logo {
@@ -175,11 +247,17 @@ main {
     }
 
     .main-nav ul {
-        flex-direction: column; /* Apila enlaces en móviles */
+        flex-direction: column;
         gap: 5px;
     }
     
     .main-nav a {
         display: block;
+        text-align: center;
+    }
+
+    /* Reduce el padding general en móviles */
+    main {
+        padding: 20px 0;
     }
 }
