@@ -3,47 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recursos para desarrolladores Web | Página de Inicio</title>   <link rel="stylesheet" href="css/style.css">
+  <title>Inicio | Recursos Esenciales para Desarrolladores Web</title> 
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Encuentra recursos, documentación y herramientas para aprender y dominar HTML5, CSS3 y JavaScript.">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1 class="logo">Recursos</h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>           <li><a href="galeria.html">Galería</a></li>
+    <div class="container site-header-content">       <h1 class="logo">RecursosDev</h1> 
+      <nav class="main-nav" aria-label="Navegación principal del sitio">         <ul>
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="galeria.html">Galería</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main>     <section class="hero container">       <h2>Recursos Esenciales para Desarrolladores Web</h2>
-      <p>Encuentra documentación, herramientas y ejemplos para mejorar tus habilidades en desarrollo web.</p>
+  
+  <main>
+        <section class="hero" role="region" aria-labelledby="hero-title">
+        <div class="container">
+            <h2 id="hero-title">Recursos Esenciales para Desarrolladores Web</h2>
+            <p>Encuentra documentación, herramientas y ejemplos para mejorar tus habilidades en desarrollo web. ¡Domina las tecnologías clave!</p>
+        </div>
     </section>
 
-    <section class="cards-section container">       <h3>Temas principales</h3>       <div class="cards-grid">         <article class="card">
-          <a href="#">             <h3>HTML5</h3>
-            <p>Aprende la estructura básica de la web y las últimas etiquetas.</p>
+    <section class="cards-section container">
+                <h2>Temas y Tecnologías Principales</h2> 
+        <div class="cards-grid">
+         <article class="card">
+          <a href="#" title="Ir a recursos de HTML5"> 
+            <h3>HTML5</h3>
+            <p>Aprende la estructura básica de la web y las últimas etiquetas semánticas.</p>
           </a>
         </article>
         <article class="card">
-          <a href="#">
+          <a href="#" title="Ir a recursos de CSS3">
             <h3>CSS3</h3>
-            <p>Domina estilos modernos, flexbox, grid y animaciones.</p>
+            <p>Domina estilos modernos, incluyendo **Flexbox**, **Grid** y animaciones.</p>
           </a>
         </article>
         <article class="card">
-          <a href="#">
+          <a href="#" title="Ir a recursos de JavaScript">
             <h3>JavaScript</h3>
-            <p>Crea páginas interactivas y aplicaciones web dinámicas.</p>
+            <p>Crea páginas interactivas, maneja el DOM y desarrolla aplicaciones web dinámicas.</p>
           </a>
         </article>
       </div>
     </section>
   </main>
+  
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 MSCH</p>
+      <p>&copy; 2025 MSCH | Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
